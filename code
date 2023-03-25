@@ -1,0 +1,17 @@
+import os
+
+def count_files(path):
+    """
+    A function to count the number of files in a directory and all its subdirectories.
+
+    Args:
+    path (str): directory path.
+
+    Returns:
+    int: number of files.
+    """
+
+    count = 0
+    for root, dirs, files in os.walk(path):
+        count += len(files)
+    return count
